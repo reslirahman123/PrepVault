@@ -16,6 +16,10 @@ import Login from './components/login/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './components/login/Dashboard';
 import Navbar from './components/login/Navbar';
+import { CartProvider } from './components/fakestore-reducer/context/CartProvider';
+import ProductList from './components/fakestore-reducer/ProductList';
+import StoreNavbar from './components/fakestore-reducer/StoreNavbar';
+import Cart from './components/fakestore-reducer/Cart';
 
 
 function App() {
@@ -38,7 +42,7 @@ function App() {
       {/* <PaginationExample /> */}
       {/* <FormValidation /> */}
 
-      <AuthProvider>
+      {/* <AuthProvider>
         <Router>
           <Navbar />
           <Routes>
@@ -46,7 +50,19 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
-      </AuthProvider>
+      </AuthProvider> */}
+
+      <CartProvider>
+        <Router>
+          <StoreNavbar />
+          <Routes>
+            {/* <Route path='./navbar' element={<StoreNavbar />} /> */}
+            <Route path='/' element={<ProductList />} />
+            <Route path='/cart' element={<Cart />}/>
+            <Route />
+          </Routes>
+        </Router>
+      </CartProvider>
     </div>
   );
 }
