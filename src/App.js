@@ -20,6 +20,8 @@ import { CartProvider } from './components/fakestore-reducer/context/CartProvide
 import ProductList from './components/fakestore-reducer/ProductList';
 import StoreNavbar from './components/fakestore-reducer/StoreNavbar';
 import Cart from './components/fakestore-reducer/Cart';
+import WindowDimensions from './components/learningconcept/WindowDimensions';
+import ModalContainer from './components/modal/ModalContainer';
 
 
 function App() {
@@ -51,18 +53,20 @@ function App() {
           </Routes>
         </Router>
       </AuthProvider> */}
-
+{/* 
       <CartProvider>
         <Router>
           <StoreNavbar />
           <Routes>
-            {/* <Route path='./navbar' element={<StoreNavbar />} /> */}
             <Route path='/' element={<ProductList />} />
             <Route path='/cart' element={<Cart />}/>
             <Route />
           </Routes>
         </Router>
-      </CartProvider>
+      </CartProvider> */}
+
+      {/* <WindowDimensions /> */}
+      <ModalContainer />
     </div>
   );
 }
